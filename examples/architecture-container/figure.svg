@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 510" font-family="'SF Pro Text','PingFang SC',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+  <title>数据处理流水线</title>
+  <desc>容器嵌套架构图示例：外部输入进入处理集群（校验器、转换器、存储器），结果输出到外部报表服务</desc>
+  <style>
+    svg {
+      /* token 色值未填，此处为灰阶占位演示色，非推荐配色 */
+      --surface: #E5E7EB;
+      --surface-muted: #F3F4F6;
+      --text: #374151;
+      --text-muted: #9CA3AF;
+      --border: #D1D5DB;
+      --brand: #2563EB;
+      --brand-text: #1E40AF;
+      --bg: #FFFFFF;
+    }
+    svg { background: var(--bg); }
+    .boundary {
+      fill: #F9FAFB;
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+      stroke-dasharray: 6 6;
+    }
+    .module {
+      fill: var(--surface);
+      stroke: var(--border);
+      stroke-width: 1.5;
+    }
+    .module-focus {
+      fill: #DBEAFE;
+      stroke: var(--brand);
+      stroke-width: 2;
+    }
+    .external {
+      fill: var(--surface-muted);
+      stroke: #6B7280;
+      stroke-width: 1.5;
+    }
+    .link {
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      marker-end: url(#arrow);
+    }
+    .link-async {
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 5 5;
+      marker-end: url(#arrow);
+    }
+    .link-main {
+      stroke: var(--brand);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      marker-end: url(#arrow-brand);
+    }
+    .arrowhead { fill: var(--text-muted); }
+    .arrowhead-brand { fill: var(--brand); }
+    .title {
+      fill: var(--text);
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .node-title {
+      fill: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      text-anchor: middle;
+    }
+    .node-subtitle {
+      fill: var(--text-muted);
+      font-size: 12px;
+      text-anchor: middle;
+    }
+    .focus-title { fill: var(--brand-text); }
+    .boundary-label {
+      fill: var(--text-muted);
+      font-size: 12px;
+    }
+    .capsule {
+      fill: var(--bg);
+      stroke: var(--border);
+      stroke-width: 1;
+    }
+    .tag {
+      fill: var(--text-muted);
+      font-size: 12px;
+      text-anchor: middle;
+    }
+    .legend-box { fill: var(--surface-muted); }
+    .legend-text {
+      fill: var(--text-muted);
+      font-size: 12px;
+    }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4"
+            markerWidth="8" markerHeight="8"
+            markerUnits="userSpaceOnUse" orient="auto">
+      <path class="arrowhead" d="M1 1 L7 4 L1 7 Z"/>
+    </marker>
+    <marker id="arrow-brand" viewBox="0 0 8 8" refX="7" refY="4"
+            markerWidth="8" markerHeight="8"
+            markerUnits="userSpaceOnUse" orient="auto">
+      <path class="arrowhead-brand" d="M1 1 L7 4 L1 7 Z"/>
+    </marker>
+  </defs>
+
+  <text class="title" x="480" y="60" text-anchor="middle">数据处理流水线</text>
+
+  <g id="external-in">
+    <rect class="external" x="60" y="204" width="120" height="56" rx="8"/>
+    <text class="node-title" x="120" y="237">用户上传</text>
+  </g>
+
+  <g id="cluster">
+    <rect class="boundary" x="240" y="140" width="520" height="264" rx="12"/>
+    <text class="boundary-label" x="260" y="172">处理集群</text>
+    <g id="module-validator">
+      <rect class="module" x="280" y="200" width="160" height="64" rx="8"/>
+      <text class="node-title" x="360" y="228">校验器</text>
+      <text class="node-subtitle" x="360" y="248">schema 检查</text>
+    </g>
+    <g id="module-transformer">
+      <rect class="module" x="560" y="200" width="160" height="64" rx="8"/>
+      <text class="node-title" x="640" y="228">转换器</text>
+      <text class="node-subtitle" x="640" y="248">格式归一化</text>
+    </g>
+    <g id="module-storage">
+      <rect class="module-focus" x="420" y="320" width="160" height="64" rx="8"/>
+      <text class="node-title focus-title" x="500" y="348">存储器</text>
+      <text class="node-subtitle" x="500" y="368">主存储</text>
+    </g>
+  </g>
+
+  <g id="external-out">
+    <rect class="external" x="800" y="324" width="120" height="56" rx="8"/>
+    <text class="node-title" x="860" y="357">报表服务</text>
+  </g>
+
+  <g id="edges">
+    <path class="link" d="M 180 232 L 278 232"/>
+    <path class="link-async" d="M 440 232 L 558 232"/>
+    <g id="edge-label-async">
+      <rect class="capsule" x="458" y="199" width="40" height="22" rx="11"/>
+      <text class="tag" x="478" y="214">异步</text>
+    </g>
+    <path class="link" d="M 640 264 L 640 272 Q 640 292 620 292 L 520 292 Q 500 292 500 312 L 500 318"/>
+    <path class="link-main" d="M 580 352 L 798 352"/>
+    <g id="edge-label-result">
+      <rect class="capsule" x="640" y="319" width="44" height="22" rx="11"/>
+      <text class="tag" x="662" y="334">结果</text>
+    </g>
+  </g>
+
+  <g id="legend">
+    <rect class="legend-box" x="208" y="432" width="544" height="36" rx="8"/>
+    <rect x="228" y="444" width="12" height="12" rx="3" fill="#E5E7EB" stroke="#D1D5DB" stroke-width="1.5"/>
+    <text class="legend-text" x="246" y="454">中性模块</text>
+    <rect x="318" y="444" width="12" height="12" rx="3" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+    <text class="legend-text" x="336" y="454">焦点模块</text>
+    <rect x="408" y="444" width="12" height="12" rx="3" fill="#F3F4F6" stroke="#6B7280" stroke-width="1.5"/>
+    <text class="legend-text" x="426" y="454">外部系统</text>
+    <line x1="498" y1="450" x2="520" y2="450" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+    <text class="legend-text" x="526" y="454">依赖</text>
+    <line x1="574" y1="450" x2="596" y2="450" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="5 5"/>
+    <text class="legend-text" x="602" y="454">异步</text>
+    <line x1="650" y1="450" x2="672" y2="450" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+    <text class="legend-text" x="678" y="454">主数据流</text>
+  </g>
+</svg>

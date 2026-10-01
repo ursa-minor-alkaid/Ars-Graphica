@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" font-family="'SF Pro Text','PingFang SC',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+  <title>账户注册流程</title>
+  <desc>横向流程图示例：开始、提交表单、校验数据、通过判定、完成；校验失败经修正输入回环重试</desc>
+  <style>
+    svg {
+      /* token 色值未填，此处为灰阶占位演示色，非推荐配色 */
+      --surface: #E5E7EB;
+      --surface-muted: #F3F4F6;
+      --text: #374151;
+      --text-muted: #9CA3AF;
+      --border: #D1D5DB;
+      --brand: #2563EB;
+      --brand-text: #1E40AF;
+      --bg: #FFFFFF;
+    }
+    svg { background: var(--bg); }
+    .node {
+      fill: var(--surface);
+      stroke: var(--border);
+      stroke-width: 1.5;
+    }
+    .node-focus {
+      fill: var(--surface-muted);
+      stroke: var(--brand);
+      stroke-width: 2;
+    }
+    .flow {
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      marker-end: url(#arrow);
+    }
+    .flow-back {
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 5 5;
+      marker-end: url(#arrow);
+    }
+    .arrowhead { fill: var(--text-muted); }
+    .label {
+      fill: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .label-focus { fill: var(--brand-text); }
+    .title {
+      fill: var(--text);
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .tag {
+      fill: var(--text-muted);
+      font-size: 12px;
+    }
+    .capsule {
+      fill: var(--bg);
+      stroke: var(--border);
+      stroke-width: 1;
+    }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4"
+            markerWidth="8" markerHeight="8"
+            markerUnits="userSpaceOnUse" orient="auto">
+      <path class="arrowhead" d="M1 1 L7 4 L1 7 Z"/>
+    </marker>
+  </defs>
+
+  <text class="title" x="480" y="64" text-anchor="middle">账户注册流程</text>
+
+  <g id="step-start">
+    <rect class="node" x="40" y="150" width="88" height="40" rx="20"/>
+    <text class="label" x="84" y="175" text-anchor="middle">开始</text>
+  </g>
+  <g id="step-submit">
+    <rect class="node" x="188" y="146" width="120" height="48" rx="8"/>
+    <text class="label" x="248" y="175" text-anchor="middle">提交表单</text>
+  </g>
+  <g id="step-validate">
+    <rect class="node-focus" x="368" y="146" width="120" height="48" rx="8"/>
+    <text class="label label-focus" x="428" y="175" text-anchor="middle">校验数据</text>
+  </g>
+  <g id="step-decision">
+    <path class="node" d="M 613 133.3 L 663 166.7 Q 668 170 663 173.3 L 613 206.7 Q 608 210 603 206.7 L 553 173.3 Q 548 170 553 166.7 L 603 133.3 Q 608 130 613 133.3 Z"/>
+    <text class="label" x="608" y="175" text-anchor="middle">通过？</text>
+  </g>
+  <g id="step-done">
+    <rect class="node" x="728" y="150" width="88" height="40" rx="20"/>
+    <text class="label" x="772" y="175" text-anchor="middle">完成</text>
+  </g>
+  <g id="step-retry">
+    <rect class="node" x="548" y="266" width="120" height="48" rx="8"/>
+    <text class="label" x="608" y="295" text-anchor="middle">修正输入</text>
+  </g>
+
+  <g id="edges">
+    <path class="flow" d="M 128 170 L 186 170"/>
+    <path class="flow" d="M 308 170 L 366 170"/>
+    <path class="flow" d="M 488 170 L 546 170"/>
+    <path class="flow" d="M 668 170 L 726 170"/>
+    <g id="edge-label-yes">
+      <rect class="capsule" x="683" y="137" width="28" height="22" rx="11"/>
+      <text class="tag" x="697" y="152" text-anchor="middle">是</text>
+    </g>
+    <path class="flow" d="M 608 210 L 608 264"/>
+    <g id="edge-label-no">
+      <rect class="capsule" x="624" y="226" width="28" height="22" rx="11"/>
+      <text class="tag" x="638" y="241" text-anchor="middle">否</text>
+    </g>
+    <path class="flow-back" d="M 548 290 L 448 290 Q 428 290 428 270 L 428 196"/>
+  </g>
+</svg>

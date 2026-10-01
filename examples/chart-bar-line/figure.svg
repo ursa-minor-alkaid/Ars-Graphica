@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 630" font-family="'SF Pro Text','PingFang SC',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+  <title>月度营收与增长率</title>
+  <desc>柱状与折线组合图示例：六个月营收柱状（万元，左轴）与增长率折线（%，右轴）</desc>
+  <style>
+    svg {
+      /* token 色值未填，此处为灰阶占位演示色，非推荐配色 */
+      --surface: #E5E7EB;
+      --text: #374151;
+      --text-muted: #9CA3AF;
+      --border: #D1D5DB;
+      --brand: #2563EB;
+      --series-bar: #C4CAD4;
+      --series-line: #374151;
+      --bg: #FFFFFF;
+    }
+    svg { background: var(--bg); }
+    .title {
+      fill: var(--text);
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .legend-text {
+      fill: var(--text-muted);
+      font-size: 12px;
+    }
+    .axis {
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+    }
+    .grid {
+      stroke: var(--border);
+      stroke-width: 1;
+    }
+    .tick {
+      fill: var(--text-muted);
+      font-size: 12px;
+    }
+    .tick-strong { fill: var(--text); }
+    .bar { fill: var(--series-bar); }
+    .bar-focus { fill: var(--brand); }
+    .value {
+      fill: var(--text-muted);
+      font-size: 12px;
+      text-anchor: middle;
+    }
+    .value-focus {
+      fill: var(--brand);
+      font-size: 12px;
+      font-weight: 600;
+      text-anchor: middle;
+    }
+    .trend {
+      fill: none;
+      stroke: var(--series-line);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .trend-dot { fill: var(--series-line); }
+    .month {
+      fill: var(--text-muted);
+      font-size: 12px;
+      text-anchor: middle;
+    }
+  </style>
+
+  <text class="title" x="480" y="56" text-anchor="middle">月度营收与增长率</text>
+
+  <g id="legend">
+    <rect x="375" y="76" width="12" height="12" rx="3" fill="#C4CAD4"/>
+    <text class="legend-text" x="395" y="86">营收（万元）</text>
+    <rect x="491" y="76" width="12" height="12" rx="3" fill="#374151"/>
+    <text class="legend-text" x="511" y="86">增长率（%）</text>
+  </g>
+
+  <g id="grid">
+    <line class="grid" x1="120" y1="452" x2="880" y2="452"/>
+    <line class="grid" x1="120" y1="345" x2="880" y2="345"/>
+    <line class="grid" x1="120" y1="238" x2="880" y2="238"/>
+    <line class="grid" x1="120" y1="130" x2="880" y2="130"/>
+  </g>
+
+  <g id="axes">
+    <line class="axis" x1="120" y1="130" x2="120" y2="560"/>
+    <line class="axis" x1="880" y1="130" x2="880" y2="560"/>
+    <line class="axis" x1="120" y1="560" x2="880" y2="560"/>
+    <text class="tick" x="112" y="116" text-anchor="end">万元</text>
+    <text class="tick" x="112" y="564" text-anchor="end">0</text>
+    <text class="tick" x="112" y="456" text-anchor="end">25</text>
+    <text class="tick" x="112" y="349" text-anchor="end">50</text>
+    <text class="tick" x="112" y="242" text-anchor="end">75</text>
+    <text class="tick" x="112" y="134" text-anchor="end">100</text>
+    <text class="tick" x="888" y="564">0%</text>
+    <text class="tick" x="888" y="421">10%</text>
+    <text class="tick" x="888" y="277">20%</text>
+    <text class="tick" x="888" y="134">30%</text>
+  </g>
+
+  <g id="bars">
+    <rect class="bar" x="159" y="379" width="48" height="181" rx="3"/>
+    <rect class="bar" x="286" y="324" width="48" height="236" rx="3"/>
+    <rect class="bar" x="413" y="354" width="48" height="206" rx="3"/>
+    <rect class="bar" x="539" y="268" width="48" height="292" rx="3"/>
+    <rect class="bar" x="666" y="238" width="48" height="322" rx="3"/>
+    <rect class="bar-focus" x="793" y="164" width="48" height="396" rx="3"/>
+  </g>
+
+  <g id="trend">
+    <polyline class="trend" points="183,445 310,388 437,474 563,345 690,302 817,245"/>
+    <circle class="trend-dot" cx="183" cy="445" r="4"/>
+    <circle class="trend-dot" cx="310" cy="388" r="4"/>
+    <circle class="trend-dot" cx="437" cy="474" r="4"/>
+    <circle class="trend-dot" cx="563" cy="345" r="4"/>
+    <circle class="trend-dot" cx="690" cy="302" r="4"/>
+    <circle class="trend-dot" cx="817" cy="245" r="4"/>
+  </g>
+
+  <g id="values">
+    <text class="value" x="183" y="375">42</text>
+    <text class="value" x="310" y="320">55</text>
+    <text class="value" x="437" y="350">48</text>
+    <text class="value" x="563" y="264">68</text>
+    <text class="value" x="690" y="234">75</text>
+    <text class="value-focus" x="817" y="160">92</text>
+  </g>
+
+  <g id="months">
+    <text class="month" x="183" y="584">1月</text>
+    <text class="month" x="310" y="584">2月</text>
+    <text class="month" x="437" y="584">3月</text>
+    <text class="month" x="563" y="584">4月</text>
+    <text class="month" x="690" y="584">5月</text>
+    <text class="month" x="817" y="584">6月</text>
+  </g>
+</svg>
