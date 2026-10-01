@@ -1,4 +1,4 @@
-<h1 align="center">ArsGraphica: 精准 SVG 图形生成</h1>
+<h1 align="center"><i>Ars Graphica</i><br>精准 SVG 图形生成</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-v0.4.0-blue" alt="version">
@@ -16,7 +16,7 @@
 - **手绘输入**：判定为手绘即强制进入净线结构复刻，保留结构与颜色语义，丢弃笔触、抖动、纸面痕迹，输出以科研期刊配图为门槛。
 - **精确绘制规范**（`guides/precision-svg.md`）：所有任务强制前置，定义坐标计划、文本度量与节点尺寸、锚点与基线、对齐与等距分布、marker 箭头与端点缩进、防重叠门禁，以及输出前十项自检。
 - **视觉 token**（`tokens/visual-tokens.md`）：颜色按中性、品牌焦点、图表系列、次强调、语义六个角色层分配；字号、间距、圆角、字重为非颜色定值；内置五套低饱和莫兰迪配色，默认填入「雾蓝燕麦」。
-- **示例骨架**（`examples/`）：三个静态 SVG 示例（流程图、柱线组合图、容器架构图），可作起手骨架与规范对照样本。
+- **示例骨架**（`examples/`）：两个静态 SVG 示例（柱线组合图、容器架构图），可作起手骨架与规范对照样本。
 
 ---
 

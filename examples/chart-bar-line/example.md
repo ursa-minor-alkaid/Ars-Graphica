@@ -1,6 +1,6 @@
 # chart-bar-line — 柱状折线组合图示例
 
-演示 precision-svg.md 在纯 SVG 手绘数据图表上的完整应用（无 Chart.js、无外部库）。占位配色为灰阶 + 单一演示蓝，正式配色由 `tokens/visual-tokens.md` 填写后决定。
+演示 precision-svg.md 在纯 SVG 手绘数据图表上的完整应用（无 Chart.js、无外部库）。配色取自 `tokens/visual-tokens.md` 的方案一「雾蓝燕麦」：柱用同源系列浅档 `--chart-series-2`，折线用深档 `--chart-series-1`，焦点柱与焦点数值用 `--brand`，坐标轴、刻度与网格走中性层的 `--text-muted` 与 `--border`。切换配色方案时替换文件顶部声明块中的颜色值即可，几何坐标不受影响。
 
 ## 演示的技术点
 

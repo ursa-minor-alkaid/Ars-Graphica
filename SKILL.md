@@ -33,8 +33,7 @@ disable-model-invocation: false
 │   ├── precision-svg.md        ← 精确绘制规范（所有任务强制前置）
 │   ├── text-to-figure.md       ← 工作流一：文字描述 → 图形
 │   └── image-replication.md    ← 工作流二：图片 → 复刻图形
-└── examples/                   ← 三个静态 SVG 示例（起手骨架参考）
-    ├── flowchart-basic/
+└── examples/                   ← 两个静态 SVG 示例（起手骨架参考）
     ├── chart-bar-line/
     └── architecture-container/
 ```

@@ -4,17 +4,16 @@
   <desc>柱状与折线组合图示例：六个月营收柱状（万元，左轴）与增长率折线（%，右轴）</desc>
   <style>
     svg {
-      /* token 色值未填，此处为灰阶占位演示色，非推荐配色 */
-      --surface: #E5E7EB;
-      --text: #374151;
-      --text-muted: #9CA3AF;
-      --border: #D1D5DB;
-      --brand: #2563EB;
-      --series-bar: #C4CAD4;
-      --series-line: #374151;
-      --bg: #FFFFFF;
+      /* 配色取自 tokens/visual-tokens.md 方案一「雾蓝燕麦」 */
+      --surface: #F7F6F3;
+      --text: #2E2C29;
+      --text-muted: #75716A;
+      --border: #D9D5CD;
+      --brand: #5F7887;
+      --chart-series-1: #4A5F6C;
+      --chart-series-2: #ACBCC5;
     }
-    svg { background: var(--bg); }
+    svg { background: var(--surface); }
     .title {
       fill: var(--text);
       font-size: 16px;
@@ -24,6 +23,8 @@
       fill: var(--text-muted);
       font-size: 12px;
     }
+    .swatch-series-2 { fill: var(--chart-series-2); }
+    .swatch-series-1 { fill: var(--chart-series-1); }
     .axis {
       stroke: var(--text-muted);
       stroke-width: 1.5;
@@ -38,7 +39,7 @@
       font-size: 12px;
     }
     .tick-strong { fill: var(--text); }
-    .bar { fill: var(--series-bar); }
+    .bar { fill: var(--chart-series-2); }
     .bar-focus { fill: var(--brand); }
     .value {
       fill: var(--text-muted);
@@ -53,12 +54,12 @@
     }
     .trend {
       fill: none;
-      stroke: var(--series-line);
+      stroke: var(--chart-series-1);
       stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .trend-dot { fill: var(--series-line); }
+    .trend-dot { fill: var(--chart-series-1); }
     .month {
       fill: var(--text-muted);
       font-size: 12px;
@@ -69,9 +70,9 @@
   <text class="title" x="480" y="56" text-anchor="middle">月度营收与增长率</text>
 
   <g id="legend">
-    <rect x="375" y="76" width="12" height="12" rx="3" fill="#C4CAD4"/>
+    <rect class="swatch-series-2" x="375" y="76" width="12" height="12" rx="3"/>
     <text class="legend-text" x="395" y="86">营收（万元）</text>
-    <rect x="491" y="76" width="12" height="12" rx="3" fill="#374151"/>
+    <rect class="swatch-series-1" x="491" y="76" width="12" height="12" rx="3"/>
     <text class="legend-text" x="511" y="86">增长率（%）</text>
   </g>
 
