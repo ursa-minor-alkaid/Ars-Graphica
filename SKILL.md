@@ -33,9 +33,12 @@ disable-model-invocation: false
 │   ├── precision-svg.md        ← 精确绘制规范（所有任务强制前置）
 │   ├── text-to-figure.md       ← 工作流一：文字描述 → 图形
 │   └── image-replication.md    ← 工作流二：图片 → 复刻图形
-└── examples/                   ← 两个静态 SVG 示例（起手骨架参考）
+└── examples/                   ← 六个静态 SVG 示例（起手骨架参考）
     ├── chart-bar-line/
-    └── architecture-container/
+    ├── architecture-container/
+    ├── dio-construct/
+    ├── humanities-career-sankey/
+    └── matrix-multiplication-methods/
 ```
 
 读取顺序：确定任务类型 → 读对应工作流文件 → 读 `guides/precision-svg.md` → 需要 token 细节或起手骨架时读 `tokens/visual-tokens.md` 与对应 `examples/<id>/`。

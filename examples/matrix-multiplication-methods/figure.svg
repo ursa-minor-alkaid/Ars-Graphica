@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 450">
+  <title>矩阵列图像示意图</title>
+  <desc>展示矩阵与向量乘法 Ax=b 的列图像计算方式：A 的各列分别被 x 的对应元素加权后相加得到 b。</desc>
+  <style>
+    svg {
+      --surface: #F7F6F7;
+      --surface-muted: #EFEEF0;
+      --text: #2D2C2E;
+      --text-muted: #737073;
+      --border: #D9D7DA;
+      --brand: #6F6780;
+      --brand-soft: #EFEDF2;
+      --brand-soft-strong: #E1DDE7;
+      --brand-text: #403A4D;
+      --brand-on: #FFFFFF;
+      --accent: #A4878D;
+      --accent-soft: #F4EDEE;
+      --accent-text: #5F4A4F;
+
+      --font-sans: "SF Pro Text", "PingFang SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-metric: "Inter", "SF Pro Text", "PingFang SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --weight-regular: 400;
+      --weight-medium: 500;
+      --weight-strong: 600;
+    }
+    .title { font-family: var(--font-sans); font-size: 16px; font-weight: var(--weight-medium); fill: var(--text); }
+    .label { font-family: var(--font-metric); font-size: 16px; font-weight: var(--weight-medium); fill: var(--text); }
+    .caption { font-family: var(--font-metric); font-size: 13px; font-weight: var(--weight-strong); fill: var(--brand-on); }
+    .muted { font-family: var(--font-metric); font-size: 14px; fill: var(--text-muted); }
+    .eq { font-family: var(--font-metric); font-size: 36px; fill: var(--text-muted); }
+    .result { font-family: var(--font-metric); font-size: 24px; font-weight: var(--weight-strong); fill: var(--accent-text); }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4"
+            markerWidth="8" markerHeight="8"
+            markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1 L7 4 L1 7 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="840" height="450" fill="var(--surface)"/>
+
+  <!-- 标题 -->
+  <text x="420" y="50" text-anchor="middle" class="title">矩阵的列图像：Ax = b</text>
+
+  <!-- 矩阵 A（括号样式） -->
+  <g id="matrix-a">
+    <path d="M 96 162 L 84 162 L 84 388 L 96 388" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 344 162 L 356 162 L 356 388 L 344 388" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- col1 -->
+    <rect x="108" y="170" width="52" height="210" rx="8" fill="var(--brand-soft-strong)" stroke="var(--brand)" stroke-width="1.5"/>
+    <line x1="112" y1="230" x2="156" y2="230" stroke="var(--border)" stroke-width="1"/>
+    <line x1="112" y1="290" x2="156" y2="290" stroke="var(--border)" stroke-width="1"/>
+    <!-- col2 -->
+    <rect x="176" y="170" width="52" height="210" rx="8" fill="var(--brand-soft)" stroke="var(--brand)" stroke-width="1.5"/>
+    <line x1="180" y1="230" x2="224" y2="230" stroke="var(--border)" stroke-width="1"/>
+    <line x1="180" y1="290" x2="224" y2="290" stroke="var(--border)" stroke-width="1"/>
+    <!-- 省略号 -->
+    <text x="254" y="281" text-anchor="middle" class="muted" style="font-size:16px">···</text>
+    <!-- coln -->
+    <rect x="280" y="170" width="52" height="210" rx="8" fill="var(--brand-soft-strong)" stroke="var(--brand)" stroke-width="1.5"/>
+    <line x1="284" y1="230" x2="328" y2="230" stroke="var(--border)" stroke-width="1"/>
+    <line x1="284" y1="290" x2="328" y2="290" stroke="var(--border)" stroke-width="1"/>
+    <!-- A 标签 -->
+    <text x="220" y="405" text-anchor="middle" class="label">A</text>
+  </g>
+
+  <!-- 向量 x（括号样式，与 A 同一竖向区间） -->
+  <g id="vector-x">
+    <path d="M 436 162 L 424 162 L 424 388 L 436 388" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 484 162 L 496 162 L 496 388 L 484 388" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- x1 -->
+    <rect x="436" y="192" width="48" height="28" rx="14" fill="var(--brand)"/>
+    <text x="460" y="211" text-anchor="middle" class="caption">1</text>
+    <!-- x2 -->
+    <rect x="436" y="240" width="48" height="28" rx="14" fill="var(--brand)"/>
+    <text x="460" y="259" text-anchor="middle" class="caption">2</text>
+    <!-- 省略号 -->
+    <text x="460" y="304" text-anchor="middle" class="muted" style="font-size:13px">⋮</text>
+    <!-- xn -->
+    <rect x="436" y="330" width="48" height="28" rx="14" fill="var(--brand)"/>
+    <text x="460" y="349" text-anchor="middle" class="caption">n</text>
+    <!-- x 标签 -->
+    <text x="460" y="405" text-anchor="middle" class="label">x</text>
+  </g>
+
+  <!-- 等号 -->
+  <text x="576" y="288" text-anchor="middle" class="eq">=</text>
+
+  <!-- 向量 b（括号样式，与 A、x 同一竖向区间，条带宽度同 A 的列） -->
+  <g id="vector-b">
+    <path d="M 668 162 L 656 162 L 656 388 L 668 388" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 744 162 L 756 162 L 756 388 L 744 388" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="680" y="170" width="52" height="210" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="706" y="283" text-anchor="middle" class="result">b</text>
+  </g>
+
+  <!-- 弧线：x 的元素指向 A 的对应列（陡升出口、分层走廊、垂直落入列顶；对应手绘原图仅画 1、2 两条，其余由 ⋮ 省略） -->
+  <path d="M 424 206 C 400 90, 134 80, 134 168" fill="none" stroke="var(--brand)" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 424 254 C 414 96, 202 132, 202 168" fill="none" stroke="var(--brand)" stroke-width="1.5" marker-end="url(#arrow)"/>
+</svg>
