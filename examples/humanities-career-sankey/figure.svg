@@ -3,7 +3,7 @@
   <desc>桑基图示例：某届人文社科本科毕业生（示例数据 n=480）从本科专业经毕业路径到十年后职业领域的流动，流带宽度与人数成比例（1 人 = 1 单位），赭黄主线为学术传承焦点路径。</desc>
   <style>
     svg {
-      /* ===== 方案五：赭黄橄榄 ===== */
+      /* ===== 方案五：赭黄柠檬 ===== */
       --surface:            #F7F6F1;
       --surface-muted:      #EFEEE8;
       --text:               #2E2D28;
@@ -19,12 +19,12 @@
       --chart-series-1:     #726940;
       --chart-series-2:     #CFCBB4;
       --chart-series-3:     #ABA26D;
-      --chart-series-4:     #969C64;
+      --chart-series-4:     #BDB475;
       --chart-other:        #C3C3C0;
 
-      --accent:             #8A9060;
-      --accent-soft:        #F0F2E8;
-      --accent-text:        #565A3A;
+      --accent:             #D5CC80;
+      --accent-soft:        #F4F1E0;
+      --accent-text:        #6C6438;
 
       --success:            #7C9473;
       --warning:            #A79F7E;

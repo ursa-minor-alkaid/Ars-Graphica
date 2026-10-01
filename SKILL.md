@@ -72,7 +72,7 @@ disable-model-invocation: false
 
 ## 颜色契约
 
-- token 颜色已填入默认方案“雾蓝燕麦”（低饱和莫兰迪系），备选方案（豆绿陶土、灰紫烟粉、赭红陶橙、赭黄橄榄）见 `tokens/visual-tokens.md` 预设配色方案一节，生成图形直接消费当前 token 值
+- token 颜色已填入默认方案“雾蓝燕麦”（低饱和莫兰迪系），备选方案（豆绿陶土、灰紫烟粉、赭红陶橙、赭黄柠檬）见 `tokens/visual-tokens.md` 预设配色方案一节，生成图形直接消费当前 token 值
 - 图片复刻默认忠实取原图颜色；用户指令"用我的配色/用 token 配色"时按 image-replication.md 第 4 节映射到 token 框架
 - 原图判定为手绘时，强制执行 image-replication.md 第 3 节净线结构复刻：忽略手写体与线条歪斜抖动，输出达到科研期刊配图水准
 
