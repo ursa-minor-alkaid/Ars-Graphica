@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 990" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">Trinity diagram — triangle within circles: God, Father, Son, Spirit</title>
+  <desc id="dsc">等边三角形内接于同心双圆，三顶点各以圆弧截出 FATHER／SON／SPIRIT 三个扇形，三条等宽通道以“is”连向中央十芒星内的 GOD，环带上三处“is not”标出位格之间的互不等同。</desc>
+  <style>
+    svg {
+      /* 框架配色：方案五 赭黄柠檬（哲学／神学人文向） */
+      --surface:           #F7F6F1;
+      --surface-muted:     #EFEEE8;
+      --text:              #2E2D28;
+      --text-muted:        #73706B;
+      --border:            #DAD7CE;
+      --brand:             #94894B;
+      --brand-soft:        #F4F2E9;
+      --brand-soft-strong: #E6DEBC;
+      --brand-text:        #816E32;
+      --chart-series-1:    #B5A14A;
+      --chart-series-3:    #ABA26D;
+      --font-serif: "Times New Roman", "Songti SC", "Source Han Serif SC", "Noto Serif CJK SC", Garamond, serif;
+    }
+    .frame { fill: none; stroke: var(--chart-series-1); stroke-width: 8; stroke-linejoin: round; }
+    .sec   { fill: none; stroke: var(--chart-series-3); stroke-width: 4.5; stroke-linecap: round; }
+    .band  { fill: none; stroke: var(--chart-series-3); stroke-width: 4.5; stroke-linecap: butt; }
+    .star  { fill: var(--brand-soft-strong); stroke: var(--brand); stroke-width: 5; stroke-linejoin: round; }
+    text   { font-family: var(--font-serif); text-anchor: middle; }
+    .cap       { fill: var(--text); letter-spacing: 1px; }
+    .cap-focus { fill: var(--brand-text); letter-spacing: 1px; }
+    .rel       { fill: var(--text); font-style: italic; }
+    .rel-neg   { fill: var(--text-muted); font-style: italic; }
+  </style>
+
+  <rect x="0" y="0" width="960" height="990" fill="var(--surface)"/>
+
+  <g id="circles">
+    <circle class="sec" cx="478.0" cy="544.5" r="402.8"/>
+    <circle class="sec" cx="478.0" cy="544.5" r="318.8"/>
+  </g>
+
+  <g id="vertex-arcs">
+      <path class="sec" d="M 354.9 249.5 A 242.0 242.0 0 0 0 598.0 249.0"/>
+      <path class="sec" d="M 282.0 794.0 A 242.0 242.0 0 0 0 161.1 584.5"/>
+      <path class="sec" d="M 674.0 794.0 A 242.0 242.0 0 0 1 794.0 585.0"/>
+  </g>
+
+  <g id="procession-bands">
+    <path class="band" d="M 520.0 278.0 L 520.0 405.2"/>
+    <path class="band" d="M 436.0 278.7 L 436.0 405.2"/>
+    <path class="band" d="M 227.3 640.7 L 363.4 562.1"/>
+    <path class="band" d="M 268.4 714.0 L 422.9 624.8"/>
+    <path class="band" d="M 687.6 714.0 L 533.1 624.8"/>
+    <path class="band" d="M 728.7 640.7 L 592.6 562.1"/>
+  </g>
+
+  <g id="god-star">
+    <path class="star" d="M 630.0 544.5 L 568.0 515.3 L 601.0 455.2 L 533.6 468.0 L 525.0 399.9 L 478.0 449.9 L 431.0 399.9 L 422.4 468.0 L 355.0 455.2 L 388.0 515.3 L 326.0 544.5 L 388.0 573.7 L 355.0 633.8 L 422.4 621.0 L 431.0 689.1 L 478.0 639.1 L 525.0 689.1 L 533.6 621.0 L 601.0 633.8 L 568.0 573.7 Z"/>
+  </g>
+
+  <g id="triangle">
+    <path class="frame" d="M 476.0 40.0 L 40.0 794.0 L 916.0 794.0 Z"/>
+  </g>
+
+  <g id="labels">
+    <text class="cap" x="476.0" y="192.0" font-size="27.0" text-anchor="middle">FATHER</text>
+    <text class="cap" x="181.3" y="756.2" font-size="27.0" text-anchor="middle">SON</text>
+    <text class="cap" x="774.7" y="756.2" font-size="27.0" text-anchor="middle">SPIRIT</text>
+    <text class="cap-focus" x="479.0" y="560.0" font-size="27.0" text-anchor="middle">GOD</text>
+    <text class="rel" x="478.0" y="343.9" font-size="24.0" text-anchor="middle">is</text>
+    <text class="rel" x="297.9" y="655.9" font-size="24.0" transform="rotate(-30 297.867 655.85)" text-anchor="middle">is</text>
+    <text class="rel" x="658.1" y="655.9" font-size="24.0" transform="rotate(30 658.133 655.85)" text-anchor="middle">is</text>
+    <text class="rel-neg" x="165.5" y="371.5" font-size="24.0" transform="rotate(-60 165.538 371.45)" text-anchor="middle">is not</text>
+    <text class="rel-neg" x="790.5" y="371.5" font-size="24.0" transform="rotate(60 790.462 371.45)" text-anchor="middle">is not</text>
+    <text class="rel-neg" x="478.0" y="912.6" font-size="24.0" text-anchor="middle">is not</text>
+  </g>
+</svg>

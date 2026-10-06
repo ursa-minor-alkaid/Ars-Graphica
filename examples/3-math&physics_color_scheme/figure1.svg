@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 398">
+  <title>矩阵乘法：行 × 列</title>
+  <desc>矩阵 A 的第 i 行与矩阵 B 的第 j 列相乘，得到结果矩阵 C 中第 i 行第 j 列的元素 c_ij。</desc>
+  <style>
+    svg {
+      /* ===== 方案三：冷紫烟粉 ===== */
+      --surface:            #F7F5F8;
+      --text:               #2A262B;
+      --text-muted:         #6A606E;
+
+      --brand:              #685071;
+      --brand-soft-strong:  #E4D9E7;
+      --brand-text:         #392C40;
+
+      --accent:             #AB888C;
+      --accent-soft:        #F4EDEE;
+      --accent-text:        #5D4146;
+
+      --font-sans: "SF Pro Text", "PingFang SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-metric: "Inter", "SF Pro Text", "PingFang SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --weight-regular: 400;
+      --weight-medium: 500;
+      --weight-strong: 600;
+    }
+    .bracket { fill: none; stroke: var(--text); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .band-row { fill: var(--brand-soft-strong); stroke: var(--brand); stroke-width: 1.5; }
+    .band-col { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+    .ring { fill: var(--surface); }
+    .dot { fill: var(--brand); }
+    .name { font-family: var(--font-metric); font-size: 24px; font-weight: var(--weight-medium); fill: var(--text); }
+    .eq { font-family: var(--font-metric); font-size: 44px; fill: var(--text-muted); }
+    .anno { font-family: var(--font-metric); font-size: 20px; font-weight: var(--weight-medium); }
+    .anno-row { fill: var(--brand-text); }
+    .anno-col { fill: var(--accent-text); }
+    .result { font-weight: var(--weight-strong); }
+    .var { font-style: italic; }
+    .sub { font-size: 14px; font-style: italic; }
+    .leader { fill: none; stroke-width: 1.5; stroke-linecap: round; }
+    .leader-row { stroke: var(--brand); }
+    .leader-col { stroke: var(--accent); }
+  </style>
+
+  <defs>
+    <marker id="arrow-row" viewBox="0 0 8 8" refX="7" refY="4"
+            markerWidth="8" markerHeight="8"
+            markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1 L7 4 L1 7 Z" fill="var(--brand)"/>
+    </marker>
+    <marker id="arrow-col" viewBox="0 0 8 8" refX="7" refY="4"
+            markerWidth="8" markerHeight="8"
+            markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1 L7 4 L1 7 Z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="960" height="398" fill="var(--surface)"/>
+
+  <!-- 矩阵 A：第 i 行 -->
+  <g id="matrix-a">
+    <path class="bracket" d="M150 96 L138 96 L138 328 L150 328"/>
+    <path class="bracket" d="M320 96 L332 96 L332 328 L320 328"/>
+    <rect class="band-row" x="162" y="194" width="146" height="36" rx="8"/>
+    <path class="leader leader-row" d="M92 212 L134 212" marker-end="url(#arrow-row)"/>
+    <text class="anno anno-row" x="84" y="219" text-anchor="end">row<tspan class="sub" dy="3">i</tspan></text>
+    <text class="name" x="235" y="362" text-anchor="middle">A</text>
+  </g>
+
+  <!-- 矩阵 B：第 j 列 -->
+  <g id="matrix-b">
+    <path class="bracket" d="M384 96 L372 96 L372 328 L384 328"/>
+    <path class="bracket" d="M554 96 L566 96 L566 328 L554 328"/>
+    <rect class="band-col" x="451" y="108" width="36" height="208" rx="8"/>
+    <path class="leader leader-col" d="M491 62 C492 76 471 82 467 100" marker-end="url(#arrow-col)"/>
+    <text class="anno anno-col" x="493" y="50" text-anchor="middle">col<tspan class="sub" dy="3">j</tspan></text>
+    <text class="name" x="469" y="362" text-anchor="middle">B</text>
+  </g>
+
+  <!-- 等号 -->
+  <text class="eq" x="619" y="227" text-anchor="middle">=</text>
+
+  <!-- 矩阵 C：交叉点 c_ij -->
+  <g id="matrix-c">
+    <path class="bracket" d="M684 96 L672 96 L672 328 L684 328"/>
+    <path class="bracket" d="M854 96 L866 96 L866 328 L854 328"/>
+    <rect class="band-row" x="696" y="194" width="146" height="36" rx="8"/>
+    <rect class="band-col" x="751" y="108" width="36" height="208" rx="8"/>
+    <circle class="ring" cx="769" cy="212" r="9.5"/>
+    <circle class="dot" cx="769" cy="212" r="6.5"/>
+    <path class="leader leader-row" d="M775 222 C789 258 841 272 879 290" marker-end="url(#arrow-row)"/>
+    <text class="anno anno-row var" x="884" y="219">i</text>
+    <text class="anno anno-col var" x="769" y="84" text-anchor="middle">j</text>
+    <text class="anno anno-row var result" x="884" y="294">c<tspan class="sub">ij</tspan></text>
+    <text class="name" x="769" y="362" text-anchor="middle">C</text>
+  </g>
+</svg>

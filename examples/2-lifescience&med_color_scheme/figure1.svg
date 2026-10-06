@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 338">
+  <title>DIO 基因结构示意图</title>
+  <desc>DIO（Double-floxed Inverted Open reading frame）结构：启动子后依次为同向的 loxP、lox2272，反向插入的 GOI，以及方向相反的 loxP、lox2272。</desc>
+  <style>
+    svg {
+      --surface:            #F7F6F2;
+      --surface-muted:      #EFEDE7;
+      --text:               #2E2D29;
+      --text-muted:         #74716A;
+      --border:             #D9D5CC;
+
+      --brand:              #66806B;
+      --brand-soft:         #EEF2EE;
+      --brand-soft-strong:  #DDE6DD;
+      --brand-text:         #37473A;
+      --brand-on:           #FFFFFF;
+
+      --chart-series-1:     #516A57;
+      --chart-series-2:     #A7BBA9;
+      --chart-series-3:     #7C957F;
+      --chart-series-4:     #AD9389;
+      --chart-other:        #C4C1BA;
+
+      --accent:             #A68D7D;
+      --accent-soft:        #F4EDE8;
+      --accent-text:        #5E4B3F;
+
+      --success:            #7C9473;
+      --warning:            #A79F7E;
+      --danger:             #A17974;
+
+      --radius: 8px;
+      --radius-card: 12px;
+      --radius-full: 999px;
+      --spacer-4: 4px;
+      --spacer-8: 8px;
+      --spacer-12: 12px;
+      --spacer-16: 16px;
+      --spacer-20: 20px;
+      --spacer-24: 24px;
+      --font-sans: "SF Pro Text", "PingFang SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-metric: "Inter", "SF Pro Text", "PingFang SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --weight-regular: 400;
+      --weight-medium: 500;
+      --weight-strong: 600;
+      --text-caption: 12px/18px;
+      --text-body: 14px/20px;
+      --text-title: 16px/24px;
+      --text-code: 13px/20px;
+    }
+    .t-title    { font-family: var(--font-sans); font-size: 16px; font-weight: var(--weight-strong);  fill: var(--text); }
+    .t-subtitle { font-family: var(--font-sans); font-size: 12px; font-weight: var(--weight-regular); fill: var(--text-muted); }
+    .t-label    { font-family: var(--font-sans); font-size: 14px; font-weight: var(--weight-medium);  fill: var(--text); }
+    .t-caption  { font-family: var(--font-sans); font-size: 12px; font-weight: var(--weight-regular); fill: var(--text-muted); }
+    .t-goi      { font-family: var(--font-sans); font-size: 14px; font-weight: var(--weight-medium);  fill: var(--brand-on); }
+    .dna        { stroke: var(--text-muted); stroke-width: 1.5; stroke-linecap: round; }
+    .promoter   { stroke: var(--text-muted); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    /* 颜色即含义：loxP 中绿、lox2272 浅绿、GOI 深绿，同一色相三档 */
+    .lox-p      { fill: var(--chart-series-3); }
+    .lox-2272   { fill: var(--chart-series-2); }
+    .goi        { fill: var(--chart-series-1); }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4"
+            markerWidth="8" markerHeight="8"
+            markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M1 1 L7 4 L1 7 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+
+  <rect width="880" height="338" fill="var(--surface)"/>
+
+  <g id="title">
+    <text class="t-title" x="440" y="53" text-anchor="middle">DIO 基因结构</text>
+    <text class="t-subtitle" x="440" y="79" text-anchor="middle">Double-Floxed Inverted Open reading frame</text>
+  </g>
+
+  <g id="construct">
+    <!-- DNA 主干线 -->
+    <line class="dna" x1="41" y1="187" x2="839" y2="187"/>
+
+    <!-- 启动子（转录方向 →） -->
+    <g id="promoter">
+      <path class="promoter" d="M70 187 L70 145 L124 145" marker-end="url(#arrow)"/>
+      <text class="t-caption" x="97" y="129" text-anchor="middle">Promoter</text>
+    </g>
+
+    <!-- 左侧 loxP / lox2272（同向，▷） -->
+    <path class="lox-p"    d="M172 161 L172 213 L208 187 Z"/>
+    <path class="lox-2272" d="M272 161 L272 213 L308 187 Z"/>
+
+    <!-- 反向 GOI（◁ 指向左，即相对启动子反向） -->
+    <path class="goi" d="M390 187 L412 155 L590 155 L590 219 L412 219 Z"/>
+    <text class="t-goi" x="501" y="192" text-anchor="middle">GOI（反向）</text>
+
+    <!-- 右侧 loxP / lox2272（反向，◁） -->
+    <path class="lox-p"    d="M688 161 L688 213 L652 187 Z"/>
+    <path class="lox-2272" d="M788 161 L788 213 L752 187 Z"/>
+
+    <!-- 位点标签 -->
+    <text class="t-label" x="190" y="239" text-anchor="middle">loxP</text>
+    <text class="t-label" x="290" y="239" text-anchor="middle">lox2272</text>
+    <text class="t-label" x="670" y="239" text-anchor="middle">loxP</text>
+    <text class="t-label" x="770" y="239" text-anchor="middle">lox2272</text>
+  </g>
+
+  <text class="t-caption" x="440" y="295" text-anchor="middle">GOI 反向插入，默认不表达；Cre 重组酶将其永久翻正并开启表达</text>
+</svg>
