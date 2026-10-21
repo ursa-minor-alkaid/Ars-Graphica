@@ -1,36 +1,48 @@
-<h1 align="center"><i>Ars Graphica</i><br>精准 SVG 图形生成</h1>
+<p align="center">
+  <img src="ars-graphica-icon.svg" alt="Ars Graphica icon" width="120">
+</p>
+
+<h1 align="center"><i>Ars Graphica</i><br>Precision SVG Figure Generation</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/version-v0.2.0-blue" alt="version">
   <img src="https://img.shields.io/badge/update-2026.10.06-green" alt="update">
 </p>
 
-输入文字描述或图片，输出独立静态 SVG 文件，保证文字定位精确、元素对齐、箭头方向正确。
+<p align="center">
+  <a href="README.zh-CN.md">中文</a>
+</p>
 
-## 项目功能
+Takes a text description or an image and outputs a standalone static SVG file, using text constraints to keep text placement precise, elements aligned, and arrow directions correct; **it resolves the arbitrary misalignment of fine details that occurs in SVG flowcharts**.
 
-技能接收文字描述与图片两类输入，产物统一为独立静态 SVG 文件，把规范预算集中投在绘制的精确性上。
+<p align="center">
+  <img src="ars-graphica-specimen.svg" alt="Ars Graphica specimen plate: workflow, figure types, and five color palettes" width="820">
+</p>
 
-- **文字描述 → SVG**（`references/text-to-figure.md`）：解析描述并判定图形类型（流程、时序、数据、机制、对比、架构），按对应类型的构图规则组织结构；缺少必要数据时先提问，不虚构数据
-- **图片 → SVG 复刻**（`references/image-replication.md`）：布局识别、元素清单、颜色提取、比例测量四步解析后重建；布局、文字、连线、配色须与原图一致，仅允许字体与细微装饰规范化
-- **SVG → 高清 PNG**（`scripts/export-png.mjs`）：按需把 SVG 栅格化为 3× PNG，供文档、论文与演示直接嵌图
+## What It Does
+
+The skill accepts two kinds of input, text descriptions and images, and always produces a standalone static SVG file, spending its specification budget on drawing precision.
+
+- **Text description → SVG** (`references/text-to-figure.md`): parses the description and determines the figure type (process, sequence, data, mechanism, comparison, architecture), then structures it according to the composition rules of that type; asks first when required data is missing, and never fabricates data
+- **Image → SVG replication** (`references/image-replication.md`): rebuilds the figure after a four-step analysis of layout detection, element inventory, color extraction, and proportion measurement; layout, text, connectors, and colors must match the original, with only typeface and minor ornamentation permitted to be normalized
+- **SVG → high-resolution PNG** (`scripts/export-png.mjs`): rasterizes an SVG to 3× PNG on demand, ready to embed directly in documents, papers, and presentations
 
 ---
 
-## 使用
+## Usage
 
-### 安装
+### Installation
 
-- 将 `ars-graphica.zip` 上传到 Agent 客户端的技能上传/安装界面
-- 或直接把 `ars-graphica.zip` 发送给模型，协助在客户端安装
+- Upload `ars-graphica.zip` to the skill upload/install interface of the Agent client
+- Or send `ars-graphica.zip` directly to the model and let it install the skill in the client
 
-### 激活
+### Activation
 
-输入 `/ars`，或直接下达明确的绘制、复刻指令。显式命令即意图，技能无"是否值得可视化"判断及场景路由功能。
+Enter `/ars`, or issue an explicit drawing or replication instruction. An explicit command is the intent; the skill makes no "is this worth visualizing" judgment and performs no scenario routing.
 
-### 导出 PNG
+### Exporting PNG
 
-SVG 产物需要位图时使用 `scripts/export-png.mjs`。脚本调用本机 Chrome / Edge 无头渲染，不引入 npm 依赖。
+Use `scripts/export-png.mjs` when a bitmap is needed from an SVG artifact. The script renders in headless mode through the local Chrome / Edge and introduces no npm dependencies.
 
 ```bash
 node scripts/export-png.mjs figure.svg
@@ -39,33 +51,33 @@ node scripts/export-png.mjs figure.svg --width=1950
 node scripts/export-png.mjs figure.svg --transparent
 ```
 
-- 默认 3×：960 宽画布输出 2880 px 宽，6.5 in 印刷宽度下约 443 ppi
-- 倍率参数 `--scale` / `--dpi` / `--width` / `--height` 四选一；`--dpi` 以 96 CSS DPI 为基准换算
-- 默认白底；`--transparent` 输出透明背景
-- 未指定输出路径时，PNG 写入 SVG 同目录同名文件
-- 运行环境：Node 22+，本机安装 Chrome 或 Edge；浏览器在非默认路径时用 `--browser=<path>`
+- Default 3×: a 960-wide canvas outputs 2880 px in width, about 443 ppi at a 6.5 in print width
+- Choose one of `--scale` / `--dpi` / `--width` / `--height`; `--dpi` is converted against 96 CSS DPI
+- White background by default; `--transparent` outputs a transparent background
+- Without an output path, the PNG is written next to the SVG under the same name
+- Environment: Node 22+, Chrome or Edge installed locally; use `--browser=<path>` when the browser is in a non-default location
 
 ---
 
-## 输出
+## Output
 
-### SVG 产物
+### SVG Artifact
 
-- 产物为完整独立的 `.svg` 文件（UTF-8），写入指定路径；未指定时写入当前工作目录
-- 默认画布宽 960，高度按内容计算，指定尺寸时从其规定；文件含 `<title>` 与 `<desc>`
-- 颜色一律 `var(--token)`，token 声明放在首个 `<style>` 块的 `svg {}` 选择器中
-- 纯静态输出：无 `<script>`、无事件属性、无 CDN 引用、无外部库、无 HTML 页面壳
+- The artifact is a complete standalone `.svg` file (UTF-8), written to the given path, or to the current working directory when unspecified
+- Default canvas width is 960, with height computed from the content; explicit dimensions take precedence; the file contains `<title>` and `<desc>`
+- Colors always use `var(--token)`, with token declarations in the `svg {}` selector of the first `<style>` block
+- Purely static output: no `<script>`, no event attributes, no CDN references, no external libraries, no HTML page shell
 
-### 配色
+### Color Schemes
 
-切换方式：用所选方案的整套色值替换 token 声明块中的颜色 token；语义色五套共用
+To switch, replace the color tokens in the token declaration block with the full set of values from the chosen scheme; semantic colors are shared across all five schemes.
 
-| 方案             | 色相构成                | 适用场景                                                     |
-| ---------------- | ----------------------- | ------------------------------------------------------------ |
-| 雾蓝燕麦（默认） | 灰蓝焦点 + 燕麦次强调   | 通用默认：流程图、架构图、数据图表；论文插图、技术文档       |
-| 豆绿陶土         | 灰豆绿焦点 + 陶土次强调 | 生命科学、医学、认知科学                                     |
-| 冷紫烟粉         | 冷紫焦点 + 烟粉次强调   | 理论框架、概念结构；数学与物理学领域；逻辑学、分析哲学等     |
-| 暖砂绯橘         | 绯橘焦点 + 暖砂次强调   | 工程流程；实践流程、实践操作；行动相关                       |
-| 赭黄柠檬         | 赭黄焦点 + 柠檬次强调  | 哲学、语言学；历史、地理；文学、社会科学内容；文献；人文向演示 |
+| Scheme                     | Hue composition                     | Use case                                                                                                                     |
+| -------------------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Mist Blue Oat (default)    | Grey-blue focus + oat secondary     | General default: flowcharts, architecture diagrams, data charts; paper figures, technical documentation                       |
+| Pea Green Terracotta       | Grey pea-green focus + terracotta secondary | Life sciences, medicine, cognitive science                                                                            |
+| Cool Violet Smoke Pink     | Cool violet focus + smoke pink secondary | Theoretical frameworks, conceptual structures; mathematics and physics; logic, analytic philosophy and similar          |
+| Warm Sand Scarlet Orange   | Scarlet orange focus + warm sand secondary | Engineering workflows; practical procedures and operations; action-related content                                   |
+| Ochre Lemon                | Ochre focus + lemon secondary       | Philosophy, linguistics; history, geography; literature and social science content; documents; humanities-oriented presentations |
 
-图片复刻默认忠实取原图颜色，指令「用我的配色」时按角色映射表切换到 token 框架。
+Image replication samples the original colors faithfully by default; the instruction "use my palette" switches to the token framework according to the role mapping table.

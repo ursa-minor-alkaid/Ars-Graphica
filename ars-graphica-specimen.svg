@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960">
+  <title>Ars Graphica specimen plate</title>
+  <desc>Square specimen plate: a drafting compass with a graduated ring, double dodecagon and diamond around an A monogram; text and image inputs, SVG and PNG outputs, six figure types, and the five palette ramps.</desc>
+  <style>
+    svg {
+      /* Scheme 01: Mist Blue / Oat */
+      --surface: #F7F6F3;
+      --surface-muted: #EFEDE8;
+      --text: #2E2C29;
+      --text-muted: #75716A;
+      --border: #D9D5CD;
+      --brand: #5F7887;
+      --brand-soft: #EDF1F3;
+      --brand-soft-strong: #DCE4E8;
+      --brand-text: #35434C;
+      --brand-on: #FFFFFF;
+      --chart-series-1: #4A5F6C;
+      --chart-series-2: #ACBCC5;
+      --chart-series-3: #78909D;
+      --chart-series-4: #A89A80;
+      --chart-other: #C4C1BB;
+      --accent: #A48F77;
+      --accent-soft: #F2EDE4;
+      --accent-text: #5D5140;
+
+      /* Scheme 02: Bean Green / Terracotta */
+      --p2-surface: #F7F6F2;
+      --p2-surface-muted: #EFEDE7;
+      --p2-text: #2E2D29;
+      --p2-text-muted: #74716A;
+      --p2-border: #D9D5CC;
+      --p2-brand: #66806B;
+      --p2-brand-soft: #EEF2EE;
+      --p2-brand-soft-strong: #DDE6DD;
+      --p2-brand-text: #37473A;
+      --p2-brand-on: #FFFFFF;
+      --p2-chart-series-1: #516A57;
+      --p2-chart-series-2: #A7BBA9;
+      --p2-chart-series-3: #7C957F;
+      --p2-chart-series-4: #AD9389;
+      --p2-chart-other: #C4C1BA;
+      --p2-accent: #A68D7D;
+      --p2-accent-soft: #F4EDE8;
+      --p2-accent-text: #5E4B3F;
+
+      /* Scheme 03: Cool Plum / Dusty Rose */
+      --p3-surface: #F7F5F8;
+      --p3-surface-muted: #EAE6EB;
+      --p3-text: #2A262B;
+      --p3-text-muted: #6A606E;
+      --p3-border: #D6CED9;
+      --p3-brand: #685071;
+      --p3-brand-soft: #F2EDF4;
+      --p3-brand-soft-strong: #E4D9E7;
+      --p3-brand-text: #392C40;
+      --p3-brand-on: #FFFFFF;
+      --p3-chart-series-1: #473850;
+      --p3-chart-series-2: #B79EBC;
+      --p3-chart-series-3: #876590;
+      --p3-chart-series-4: #D1BDC0;
+      --p3-chart-other: #C5BDC7;
+      --p3-accent: #AB888C;
+      --p3-accent-soft: #F4EDEE;
+      --p3-accent-text: #5D4146;
+
+      /* Scheme 04: Warm Sand / Scarlet */
+      --p4-surface: #F9F7F2;
+      --p4-surface-muted: #EEEAE2;
+      --p4-text: #2C2823;
+      --p4-text-muted: #71675C;
+      --p4-border: #DBD4C9;
+      --p4-brand: #88523C;
+      --p4-brand-soft: #F8EDE8;
+      --p4-brand-soft-strong: #ECD8CF;
+      --p4-brand-text: #522D25;
+      --p4-brand-on: #FFFFFF;
+      --p4-chart-series-1: #65372D;
+      --p4-chart-series-2: #D1B09D;
+      --p4-chart-series-3: #A2664E;
+      --p4-chart-series-4: #BBA989;
+      --p4-chart-other: #C7C3BD;
+      --p4-accent: #A28550;
+      --p4-accent-soft: #F7F2E8;
+      --p4-accent-text: #6B552E;
+
+      /* Scheme 05: Ochre / Lemon */
+      --p5-surface: #F7F6F1;
+      --p5-surface-muted: #EFEEE8;
+      --p5-text: #2E2D28;
+      --p5-text-muted: #73706B;
+      --p5-border: #DAD7CE;
+      --p5-brand: #94894B;
+      --p5-brand-soft: #F4F2E9;
+      --p5-brand-soft-strong: #E6DEBC;
+      --p5-brand-text: #816E32;
+      --p5-brand-on: #FFFFFF;
+      --p5-chart-series-1: #B5A14A;
+      --p5-chart-series-2: #E1DDAD;
+      --p5-chart-series-3: #ABA26D;
+      --p5-chart-series-4: #BDB475;
+      --p5-chart-other: #C3C3C0;
+      --p5-accent: #D5CC80;
+      --p5-accent-soft: #F4F1E0;
+      --p5-accent-text: #917E3B;
+
+      --font-sans: "SF Pro Text", "PingFang SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --weight-medium: 500;
+    }
+    .canvas { fill: var(--surface-muted); }
+    .plate { fill: var(--surface); stroke: var(--border); stroke-width: 1.5; }
+    .hair { fill: none; stroke: var(--border); stroke-width: 1; }
+    .display {
+      font-family: var(--font-sans);
+      font-size: 54px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      fill: var(--text);
+    }
+    .lede {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: var(--weight-medium);
+      fill: var(--text);
+    }
+    .micro {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      fill: var(--text-muted);
+    }
+    .dim {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      fill: var(--text-muted);
+    }
+    .dim-line { fill: none; stroke: var(--text-muted); stroke-width: 1; }
+    .square { fill: none; stroke: var(--border); stroke-width: 1.5; }
+    .axis { fill: none; stroke: var(--border); stroke-width: 1; stroke-dasharray: 4 8; }
+    .tick-minor { stroke: var(--text-muted); stroke-width: 1; }
+    .tick-major { stroke: var(--text-muted); stroke-width: 1.5; }
+    .ring { fill: none; stroke: var(--border); stroke-width: 1.5; }
+    .dodeca { fill: none; stroke: var(--border); stroke-width: 1.5; stroke-linejoin: round; }
+    .dodeca-inner { fill: none; stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 5; }
+    .vertex { fill: var(--surface); stroke: var(--border); stroke-width: 1; }
+    .vertex-accent { fill: var(--accent); }
+    .diamond { fill: none; stroke: var(--brand); stroke-width: 1.5; stroke-linejoin: round; }
+    .orbit { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 2 6; }
+    .medallion { fill: var(--brand); }
+    .monogram {
+      fill: none;
+      stroke: var(--brand-on);
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .monogram-dot { fill: var(--brand-on); }
+    .corner { fill: none; stroke: var(--border); stroke-width: 1; }
+    .chip { fill: var(--surface-muted); stroke: var(--border); stroke-width: 1.5; }
+    .chip-focus { fill: var(--brand-soft); stroke: var(--brand); stroke-width: 1.5; }
+    .chip-title {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: var(--weight-medium);
+      fill: var(--text);
+    }
+    .chip-title-focus { fill: var(--brand-text); }
+    .chip-sub {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      fill: var(--text-muted);
+    }
+    .link {
+      fill: none;
+      stroke: var(--text-muted);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      marker-end: url(#arrow);
+    }
+    .link-brand {
+      fill: none;
+      stroke: var(--brand);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      marker-end: url(#arrowBrand);
+    }
+    .arrowhead { fill: var(--text-muted); }
+    .arrowhead-brand { fill: var(--brand); }
+    .tile { fill: var(--surface); stroke: var(--border); stroke-width: 1.5; }
+    .tile-label {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      fill: var(--text-muted);
+      text-anchor: middle;
+    }
+    .glyph-line {
+      fill: none;
+      stroke: var(--text-muted);
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .glyph-dash {
+      fill: none;
+      stroke: var(--text-muted);
+      stroke-width: 1;
+      stroke-dasharray: 3 4;
+      stroke-linejoin: round;
+    }
+    .glyph-box { fill: var(--surface-muted); stroke: var(--border); stroke-width: 1.2; }
+    .glyph-focus { fill: var(--brand-soft-strong); stroke: var(--brand); stroke-width: 1.2; }
+    .glyph-dot { fill: var(--text-muted); }
+    .glyph-bar-brand { fill: var(--brand); }
+    .series-1 { fill: var(--chart-series-1); }
+    .series-2 { fill: var(--chart-series-2); }
+    .series-3 { fill: var(--chart-series-3); }
+    .palette-index {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      fill: var(--text-muted);
+    }
+    .palette-label {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      fill: var(--text);
+    }
+    .palette-outline { fill: none; stroke: var(--border); stroke-width: 1; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4"
+            markerWidth="8" markerHeight="8"
+            markerUnits="userSpaceOnUse" orient="auto">
+      <path class="arrowhead" d="M1 1 L7 4 L1 7 Z"/>
+    </marker>
+    <marker id="arrowBrand" viewBox="0 0 8 8" refX="7" refY="4"
+            markerWidth="8" markerHeight="8"
+            markerUnits="userSpaceOnUse" orient="auto">
+      <path class="arrowhead-brand" d="M1 1 L7 4 L1 7 Z"/>
+    </marker>
+
+    <g id="tickMinor">
+      <line class="tick-minor" x1="480" y1="238" x2="480" y2="230"/>
+    </g>
+    <g id="tickMajor">
+      <line class="tick-major" x1="480" y1="238" x2="480" y2="224"/>
+    </g>
+
+    <clipPath id="clipPalette1">
+      <rect x="280" y="778" width="616" height="16" rx="8"/>
+    </clipPath>
+    <clipPath id="clipPalette2">
+      <rect x="280" y="802" width="616" height="16" rx="8"/>
+    </clipPath>
+    <clipPath id="clipPalette3">
+      <rect x="280" y="826" width="616" height="16" rx="8"/>
+    </clipPath>
+    <clipPath id="clipPalette4">
+      <rect x="280" y="850" width="616" height="16" rx="8"/>
+    </clipPath>
+    <clipPath id="clipPalette5">
+      <rect x="280" y="874" width="616" height="16" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <rect class="canvas" x="0" y="0" width="960" height="960"/>
+  <rect class="plate" x="40" y="40" width="880" height="880" rx="12"/>
+
+  <g id="header">
+    <text class="micro" x="64" y="84">SPECIMEN PLATE / 01</text>
+    <text class="display" x="64" y="138">ARS GRAPHICA</text>
+    <text class="lede" x="64" y="162">Precision figures / standalone SVG</text>
+    <text class="micro" x="896" y="104" text-anchor="end">v0.2.0</text>
+    <text class="micro" x="896" y="124" text-anchor="end">2026.10</text>
+    <text class="micro" x="896" y="144" text-anchor="end">960 × 960</text>
+    <path class="hair" d="M64 176 H896"/>
+  </g>
+
+  <g id="dimension">
+    <path class="dim-line" d="M312 204 H648"/>
+    <path class="dim-line" d="M312 198 V210 M648 198 V210"/>
+    <text class="dim" x="480" y="196" text-anchor="middle">336</text>
+  </g>
+
+  <g id="emblem">
+    <rect class="square" x="312" y="220" width="336" height="336"/>
+    <path class="axis" d="M312 388 H648 M480 220 V556"/>
+
+    <use href="#tickMajor" transform="rotate(0 480 388)"/>
+    <use href="#tickMinor" transform="rotate(15 480 388)"/>
+    <use href="#tickMinor" transform="rotate(30 480 388)"/>
+    <use href="#tickMajor" transform="rotate(45 480 388)"/>
+    <use href="#tickMinor" transform="rotate(60 480 388)"/>
+    <use href="#tickMinor" transform="rotate(75 480 388)"/>
+    <use href="#tickMajor" transform="rotate(90 480 388)"/>
+    <use href="#tickMinor" transform="rotate(105 480 388)"/>
+    <use href="#tickMinor" transform="rotate(120 480 388)"/>
+    <use href="#tickMajor" transform="rotate(135 480 388)"/>
+    <use href="#tickMinor" transform="rotate(150 480 388)"/>
+    <use href="#tickMinor" transform="rotate(165 480 388)"/>
+    <use href="#tickMajor" transform="rotate(180 480 388)"/>
+    <use href="#tickMinor" transform="rotate(195 480 388)"/>
+    <use href="#tickMinor" transform="rotate(210 480 388)"/>
+    <use href="#tickMajor" transform="rotate(225 480 388)"/>
+    <use href="#tickMinor" transform="rotate(240 480 388)"/>
+    <use href="#tickMinor" transform="rotate(255 480 388)"/>
+    <use href="#tickMajor" transform="rotate(270 480 388)"/>
+    <use href="#tickMinor" transform="rotate(285 480 388)"/>
+    <use href="#tickMinor" transform="rotate(300 480 388)"/>
+    <use href="#tickMajor" transform="rotate(315 480 388)"/>
+    <use href="#tickMinor" transform="rotate(330 480 388)"/>
+    <use href="#tickMinor" transform="rotate(345 480 388)"/>
+
+    <circle class="ring" cx="480" cy="388" r="150"/>
+
+    <path class="dodeca" d="M616 388 L597.8 456 L548 505.8 L480 524 L412 505.8 L362.2 456 L344 388 L362.2 320 L412 270.2 L480 252 L548 270.2 L597.8 320 Z"/>
+    <path class="dodeca-inner" d="M594 418.5 L563.4 471.4 L510.5 502 L449.5 502 L396.6 471.4 L366 418.5 L366 357.5 L396.6 304.6 L449.5 274 L510.5 274 L563.4 304.6 L594 357.5 Z"/>
+
+    <circle class="vertex-accent" cx="616" cy="388" r="3.5"/>
+    <circle class="vertex" cx="597.8" cy="456" r="3.5"/>
+    <circle class="vertex" cx="548" cy="505.8" r="3.5"/>
+    <circle class="vertex-accent" cx="480" cy="524" r="3.5"/>
+    <circle class="vertex" cx="412" cy="505.8" r="3.5"/>
+    <circle class="vertex" cx="362.2" cy="456" r="3.5"/>
+    <circle class="vertex-accent" cx="344" cy="388" r="3.5"/>
+    <circle class="vertex" cx="362.2" cy="320" r="3.5"/>
+    <circle class="vertex" cx="412" cy="270.2" r="3.5"/>
+    <circle class="vertex-accent" cx="480" cy="252" r="3.5"/>
+    <circle class="vertex" cx="548" cy="270.2" r="3.5"/>
+    <circle class="vertex" cx="597.8" cy="320" r="3.5"/>
+
+    <path class="diamond" d="M578 388 L480 486 L382 388 L480 290 Z"/>
+    <circle class="orbit" cx="480" cy="388" r="70"/>
+    <circle class="medallion" cx="480" cy="388" r="56"/>
+    <path class="monogram" d="M480 352 L452 422 M480 352 L508 422 M461 400 L499 400"/>
+    <circle class="monogram-dot" cx="514" cy="424" r="3.5"/>
+  </g>
+
+  <g id="registration">
+    <path class="corner" d="M306 220 H318 M312 214 V226"/>
+    <path class="corner" d="M642 220 H654 M648 214 V226"/>
+    <path class="corner" d="M306 556 H318 M312 550 V562"/>
+    <path class="corner" d="M642 556 H654 M648 550 V562"/>
+  </g>
+
+  <g id="notice">
+    <text class="micro" x="332" y="252">GRID 8</text>
+    <text class="micro" x="628" y="252" text-anchor="end">R 150</text>
+    <text class="micro" x="332" y="532">STROKE</text>
+    <text class="micro" x="628" y="532" text-anchor="end">TEXT 12</text>
+  </g>
+
+  <g id="input">
+    <text class="micro" x="64" y="300">INPUT / 02</text>
+    <rect class="chip-focus" x="64" y="316" width="168" height="56" rx="8"/>
+    <text class="chip-title chip-title-focus" x="80" y="340">Text brief</text>
+    <text class="chip-sub" x="80" y="360">text → structure</text>
+    <rect class="chip" x="64" y="404" width="168" height="56" rx="8"/>
+    <text class="chip-title" x="80" y="428">Image input</text>
+    <text class="chip-sub" x="80" y="448">image → geometry</text>
+  </g>
+
+  <g id="output">
+    <text class="micro" x="896" y="300" text-anchor="end">OUTPUT / 02</text>
+    <rect class="chip-focus" x="728" y="316" width="168" height="56" rx="8"/>
+    <text class="chip-title chip-title-focus" x="744" y="340">Standalone SVG</text>
+    <text class="chip-sub" x="744" y="360">static / no script</text>
+    <rect class="chip" x="728" y="404" width="168" height="56" rx="8"/>
+    <text class="chip-title" x="744" y="428">High-res PNG</text>
+    <text class="chip-sub" x="744" y="448">3× / print ready</text>
+  </g>
+
+  <g id="edges">
+    <path class="link-brand" d="M232 344 H322"/>
+    <path class="link" d="M232 432 H322"/>
+    <path class="link-brand" d="M638 344 H726"/>
+    <path class="link" d="M638 432 H726"/>
+  </g>
+
+  <g id="spec-line">
+    <text class="micro" x="480" y="584" text-anchor="middle">GRID 8 · STROKE 1.5 · TEXT 12 / 14 / 16 · GAP ≥ 32</text>
+  </g>
+
+  <g id="types">
+    <text class="micro" x="64" y="620">FIGURE TYPES / 06</text>
+    <text class="micro" x="896" y="620" text-anchor="end">TEXT → STRUCTURE</text>
+
+    <g id="type-flow">
+      <rect class="tile" x="88" y="636" width="104" height="96" rx="8"/>
+      <rect class="glyph-box" x="101" y="657" width="18" height="14" rx="8"/>
+      <rect class="glyph-box" x="131" y="657" width="18" height="14" rx="8"/>
+      <rect class="glyph-focus" x="161" y="657" width="18" height="14" rx="8"/>
+      <path class="glyph-line" d="M119 664 H131 M149 664 H161"/>
+      <text class="tile-label" x="140" y="718">Flow</text>
+    </g>
+
+    <g id="type-sequence">
+      <rect class="tile" x="224" y="636" width="104" height="96" rx="8"/>
+      <path class="glyph-dash" d="M250 646 V700 M276 646 V700 M302 646 V700"/>
+      <circle class="glyph-dot" cx="250" cy="646" r="3"/>
+      <circle class="glyph-dot" cx="276" cy="646" r="3"/>
+      <circle class="glyph-dot" cx="302" cy="646" r="3"/>
+      <path class="glyph-line" d="M250 666 H302 M302 684 H250"/>
+      <circle class="glyph-dot" cx="302" cy="666" r="2.5"/>
+      <circle class="glyph-dot" cx="250" cy="684" r="2.5"/>
+      <text class="tile-label" x="276" y="718">Sequence</text>
+    </g>
+
+    <g id="type-data">
+      <rect class="tile" x="360" y="636" width="104" height="96" rx="8"/>
+      <path class="glyph-line" d="M380 700 V646 M380 700 H444"/>
+      <rect class="series-2" x="386" y="674" width="12" height="26"/>
+      <rect class="series-3" x="404" y="658" width="12" height="42"/>
+      <rect class="series-1" x="422" y="668" width="12" height="32"/>
+      <text class="tile-label" x="412" y="718">Data</text>
+    </g>
+
+    <g id="type-mechanism">
+      <rect class="tile" x="496" y="636" width="104" height="96" rx="8"/>
+      <path class="glyph-line" d="M548 668 L525.5 655 M548 668 L570.5 655 M548 668 V694"/>
+      <circle class="glyph-focus" cx="548" cy="668" r="10"/>
+      <circle class="glyph-box" cx="525.5" cy="655" r="5"/>
+      <circle class="glyph-box" cx="570.5" cy="655" r="5"/>
+      <circle class="glyph-box" cx="548" cy="694" r="5"/>
+      <text class="tile-label" x="548" y="718">Mechanism</text>
+    </g>
+
+    <g id="type-compare">
+      <rect class="tile" x="632" y="636" width="104" height="96" rx="8"/>
+      <rect class="glyph-box" x="656" y="644" width="24" height="48" rx="8"/>
+      <rect class="glyph-dot" x="660" y="650" width="16" height="6"/>
+      <path class="glyph-line" d="M660 666 H676 M660 676 H676 M660 686 H676"/>
+      <rect class="glyph-focus" x="688" y="644" width="24" height="48" rx="8"/>
+      <rect class="glyph-bar-brand" x="692" y="650" width="16" height="6"/>
+      <path class="glyph-line" d="M692 666 H708 M692 676 H708 M692 686 H708"/>
+      <text class="tile-label" x="684" y="718">Compare</text>
+    </g>
+
+    <g id="type-architecture">
+      <rect class="tile" x="768" y="636" width="104" height="96" rx="8"/>
+      <rect class="glyph-dash" x="780" y="640" width="80" height="60" rx="8"/>
+      <rect class="glyph-focus" x="790" y="650" width="28" height="18" rx="8"/>
+      <rect class="glyph-box" x="822" y="650" width="28" height="18" rx="8"/>
+      <rect class="glyph-box" x="806" y="676" width="28" height="16" rx="8"/>
+      <text class="tile-label" x="820" y="718">Architecture</text>
+    </g>
+  </g>
+
+  <g id="palettes">
+    <text class="micro" x="64" y="764">PALETTE SYSTEM / 05 PRESETS / ALL SHOWN</text>
+    <text class="micro" x="896" y="764" text-anchor="end">18 TOKENS EACH</text>
+
+    <text class="palette-index" x="64" y="790">01</text>
+    <text class="palette-label" x="88" y="790">Mist Blue / Oat</text>
+    <g clip-path="url(#clipPalette1)">
+      <rect x="280" y="778" width="34.3" height="16" fill="var(--brand-on)"/>
+      <rect x="314.222" y="778" width="34.3" height="16" fill="var(--surface)"/>
+      <rect x="348.444" y="778" width="34.3" height="16" fill="var(--surface-muted)"/>
+      <rect x="382.667" y="778" width="34.3" height="16" fill="var(--brand-soft)"/>
+      <rect x="416.889" y="778" width="34.3" height="16" fill="var(--accent-soft)"/>
+      <rect x="451.111" y="778" width="34.3" height="16" fill="var(--brand-soft-strong)"/>
+      <rect x="485.333" y="778" width="34.3" height="16" fill="var(--border)"/>
+      <rect x="519.556" y="778" width="34.3" height="16" fill="var(--chart-series-2)"/>
+      <rect x="553.778" y="778" width="34.3" height="16" fill="var(--chart-series-4)"/>
+      <rect x="588" y="778" width="34.3" height="16" fill="var(--chart-other)"/>
+      <rect x="622.222" y="778" width="34.3" height="16" fill="var(--accent)"/>
+      <rect x="656.444" y="778" width="34.3" height="16" fill="var(--chart-series-3)"/>
+      <rect x="690.667" y="778" width="34.3" height="16" fill="var(--text-muted)"/>
+      <rect x="724.889" y="778" width="34.3" height="16" fill="var(--brand)"/>
+      <rect x="759.111" y="778" width="34.3" height="16" fill="var(--chart-series-1)"/>
+      <rect x="793.333" y="778" width="34.3" height="16" fill="var(--accent-text)"/>
+      <rect x="827.556" y="778" width="34.3" height="16" fill="var(--brand-text)"/>
+      <rect x="861.778" y="778" width="34.3" height="16" fill="var(--text)"/>
+    </g>
+    <rect class="palette-outline" x="280" y="778" width="616" height="16" rx="8"/>
+
+    <text class="palette-index" x="64" y="814">02</text>
+    <text class="palette-label" x="88" y="814">Bean Green / Terracotta</text>
+    <g clip-path="url(#clipPalette2)">
+      <rect x="280" y="802" width="34.3" height="16" fill="var(--p2-brand-on)"/>
+      <rect x="314.222" y="802" width="34.3" height="16" fill="var(--p2-surface)"/>
+      <rect x="348.444" y="802" width="34.3" height="16" fill="var(--p2-surface-muted)"/>
+      <rect x="382.667" y="802" width="34.3" height="16" fill="var(--p2-brand-soft)"/>
+      <rect x="416.889" y="802" width="34.3" height="16" fill="var(--p2-accent-soft)"/>
+      <rect x="451.111" y="802" width="34.3" height="16" fill="var(--p2-brand-soft-strong)"/>
+      <rect x="485.333" y="802" width="34.3" height="16" fill="var(--p2-border)"/>
+      <rect x="519.556" y="802" width="34.3" height="16" fill="var(--p2-chart-series-2)"/>
+      <rect x="553.778" y="802" width="34.3" height="16" fill="var(--p2-chart-series-4)"/>
+      <rect x="588" y="802" width="34.3" height="16" fill="var(--p2-chart-other)"/>
+      <rect x="622.222" y="802" width="34.3" height="16" fill="var(--p2-accent)"/>
+      <rect x="656.444" y="802" width="34.3" height="16" fill="var(--p2-chart-series-3)"/>
+      <rect x="690.667" y="802" width="34.3" height="16" fill="var(--p2-text-muted)"/>
+      <rect x="724.889" y="802" width="34.3" height="16" fill="var(--p2-brand)"/>
+      <rect x="759.111" y="802" width="34.3" height="16" fill="var(--p2-chart-series-1)"/>
+      <rect x="793.333" y="802" width="34.3" height="16" fill="var(--p2-accent-text)"/>
+      <rect x="827.556" y="802" width="34.3" height="16" fill="var(--p2-brand-text)"/>
+      <rect x="861.778" y="802" width="34.3" height="16" fill="var(--p2-text)"/>
+    </g>
+    <rect class="palette-outline" x="280" y="802" width="616" height="16" rx="8"/>
+
+    <text class="palette-index" x="64" y="838">03</text>
+    <text class="palette-label" x="88" y="838">Cool Plum / Dusty Rose</text>
+    <g clip-path="url(#clipPalette3)">
+      <rect x="280" y="826" width="34.3" height="16" fill="var(--p3-brand-on)"/>
+      <rect x="314.222" y="826" width="34.3" height="16" fill="var(--p3-surface)"/>
+      <rect x="348.444" y="826" width="34.3" height="16" fill="var(--p3-surface-muted)"/>
+      <rect x="382.667" y="826" width="34.3" height="16" fill="var(--p3-brand-soft)"/>
+      <rect x="416.889" y="826" width="34.3" height="16" fill="var(--p3-accent-soft)"/>
+      <rect x="451.111" y="826" width="34.3" height="16" fill="var(--p3-brand-soft-strong)"/>
+      <rect x="485.333" y="826" width="34.3" height="16" fill="var(--p3-border)"/>
+      <rect x="519.556" y="826" width="34.3" height="16" fill="var(--p3-chart-series-2)"/>
+      <rect x="553.778" y="826" width="34.3" height="16" fill="var(--p3-chart-series-4)"/>
+      <rect x="588" y="826" width="34.3" height="16" fill="var(--p3-chart-other)"/>
+      <rect x="622.222" y="826" width="34.3" height="16" fill="var(--p3-accent)"/>
+      <rect x="656.444" y="826" width="34.3" height="16" fill="var(--p3-chart-series-3)"/>
+      <rect x="690.667" y="826" width="34.3" height="16" fill="var(--p3-text-muted)"/>
+      <rect x="724.889" y="826" width="34.3" height="16" fill="var(--p3-brand)"/>
+      <rect x="759.111" y="826" width="34.3" height="16" fill="var(--p3-chart-series-1)"/>
+      <rect x="793.333" y="826" width="34.3" height="16" fill="var(--p3-accent-text)"/>
+      <rect x="827.556" y="826" width="34.3" height="16" fill="var(--p3-brand-text)"/>
+      <rect x="861.778" y="826" width="34.3" height="16" fill="var(--p3-text)"/>
+    </g>
+    <rect class="palette-outline" x="280" y="826" width="616" height="16" rx="8"/>
+
+    <text class="palette-index" x="64" y="862">04</text>
+    <text class="palette-label" x="88" y="862">Warm Sand / Scarlet</text>
+    <g clip-path="url(#clipPalette4)">
+      <rect x="280" y="850" width="34.3" height="16" fill="var(--p4-brand-on)"/>
+      <rect x="314.222" y="850" width="34.3" height="16" fill="var(--p4-surface)"/>
+      <rect x="348.444" y="850" width="34.3" height="16" fill="var(--p4-surface-muted)"/>
+      <rect x="382.667" y="850" width="34.3" height="16" fill="var(--p4-brand-soft)"/>
+      <rect x="416.889" y="850" width="34.3" height="16" fill="var(--p4-accent-soft)"/>
+      <rect x="451.111" y="850" width="34.3" height="16" fill="var(--p4-brand-soft-strong)"/>
+      <rect x="485.333" y="850" width="34.3" height="16" fill="var(--p4-border)"/>
+      <rect x="519.556" y="850" width="34.3" height="16" fill="var(--p4-chart-series-2)"/>
+      <rect x="553.778" y="850" width="34.3" height="16" fill="var(--p4-chart-series-4)"/>
+      <rect x="588" y="850" width="34.3" height="16" fill="var(--p4-chart-other)"/>
+      <rect x="622.222" y="850" width="34.3" height="16" fill="var(--p4-accent)"/>
+      <rect x="656.444" y="850" width="34.3" height="16" fill="var(--p4-chart-series-3)"/>
+      <rect x="690.667" y="850" width="34.3" height="16" fill="var(--p4-text-muted)"/>
+      <rect x="724.889" y="850" width="34.3" height="16" fill="var(--p4-brand)"/>
+      <rect x="759.111" y="850" width="34.3" height="16" fill="var(--p4-chart-series-1)"/>
+      <rect x="793.333" y="850" width="34.3" height="16" fill="var(--p4-accent-text)"/>
+      <rect x="827.556" y="850" width="34.3" height="16" fill="var(--p4-brand-text)"/>
+      <rect x="861.778" y="850" width="34.3" height="16" fill="var(--p4-text)"/>
+    </g>
+    <rect class="palette-outline" x="280" y="850" width="616" height="16" rx="8"/>
+
+    <text class="palette-index" x="64" y="886">05</text>
+    <text class="palette-label" x="88" y="886">Ochre / Lemon</text>
+    <g clip-path="url(#clipPalette5)">
+      <rect x="280" y="874" width="34.3" height="16" fill="var(--p5-brand-on)"/>
+      <rect x="314.222" y="874" width="34.3" height="16" fill="var(--p5-surface)"/>
+      <rect x="348.444" y="874" width="34.3" height="16" fill="var(--p5-surface-muted)"/>
+      <rect x="382.667" y="874" width="34.3" height="16" fill="var(--p5-brand-soft)"/>
+      <rect x="416.889" y="874" width="34.3" height="16" fill="var(--p5-accent-soft)"/>
+      <rect x="451.111" y="874" width="34.3" height="16" fill="var(--p5-brand-soft-strong)"/>
+      <rect x="485.333" y="874" width="34.3" height="16" fill="var(--p5-border)"/>
+      <rect x="519.556" y="874" width="34.3" height="16" fill="var(--p5-chart-series-2)"/>
+      <rect x="553.778" y="874" width="34.3" height="16" fill="var(--p5-chart-series-4)"/>
+      <rect x="588" y="874" width="34.3" height="16" fill="var(--p5-chart-other)"/>
+      <rect x="622.222" y="874" width="34.3" height="16" fill="var(--p5-accent)"/>
+      <rect x="656.444" y="874" width="34.3" height="16" fill="var(--p5-chart-series-3)"/>
+      <rect x="690.667" y="874" width="34.3" height="16" fill="var(--p5-text-muted)"/>
+      <rect x="724.889" y="874" width="34.3" height="16" fill="var(--p5-brand)"/>
+      <rect x="759.111" y="874" width="34.3" height="16" fill="var(--p5-chart-series-1)"/>
+      <rect x="793.333" y="874" width="34.3" height="16" fill="var(--p5-accent-text)"/>
+      <rect x="827.556" y="874" width="34.3" height="16" fill="var(--p5-brand-text)"/>
+      <rect x="861.778" y="874" width="34.3" height="16" fill="var(--p5-text)"/>
+    </g>
+    <rect class="palette-outline" x="280" y="874" width="616" height="16" rx="8"/>
+  </g>
+</svg>
