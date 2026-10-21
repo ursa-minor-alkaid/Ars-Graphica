@@ -1,7 +1,7 @@
 <h1 align="center"><i>Ars Graphica</i><br>精准 SVG 图形生成</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-v0.1.0-blue" alt="version">
+  <img src="https://img.shields.io/badge/version-v0.2.0-blue" alt="version">
   <img src="https://img.shields.io/badge/update-2026.10.06-green" alt="update">
 </p>
 
@@ -11,8 +11,9 @@
 
 技能接收文字描述与图片两类输入，产物统一为独立静态 SVG 文件，把规范预算集中投在绘制的精确性上。
 
-- **文字描述 → SVG**（`guides/text-to-figure.md`）：解析描述并判定图形类型（流程、时序、数据、机制、对比、架构），按对应类型的构图规则组织结构；缺少必要数据时先提问，不虚构数据
-- **图片 → SVG 复刻**（`guides/image-replication.md`）：布局识别、元素清单、颜色提取、比例测量四步解析后重建；布局、文字、连线、配色须与原图一致，仅允许字体与细微装饰规范化
+- **文字描述 → SVG**（`references/text-to-figure.md`）：解析描述并判定图形类型（流程、时序、数据、机制、对比、架构），按对应类型的构图规则组织结构；缺少必要数据时先提问，不虚构数据
+- **图片 → SVG 复刻**（`references/image-replication.md`）：布局识别、元素清单、颜色提取、比例测量四步解析后重建；布局、文字、连线、配色须与原图一致，仅允许字体与细微装饰规范化
+- **SVG → 高清 PNG**（`scripts/export-png.mjs`）：按需把 SVG 栅格化为 3× PNG，供文档、论文与演示直接嵌图
 
 ---
 
@@ -26,6 +27,23 @@
 ### 激活
 
 输入 `/ars`，或直接下达明确的绘制、复刻指令。显式命令即意图，技能无"是否值得可视化"判断及场景路由功能。
+
+### 导出 PNG
+
+SVG 产物需要位图时使用 `scripts/export-png.mjs`。脚本调用本机 Chrome / Edge 无头渲染，不引入 npm 依赖。
+
+```bash
+node scripts/export-png.mjs figure.svg
+node scripts/export-png.mjs figure.svg figure@300dpi.png --dpi=300
+node scripts/export-png.mjs figure.svg --width=1950
+node scripts/export-png.mjs figure.svg --transparent
+```
+
+- 默认 3×：960 宽画布输出 2880 px 宽，6.5 in 印刷宽度下约 443 ppi
+- 倍率参数 `--scale` / `--dpi` / `--width` / `--height` 四选一；`--dpi` 以 96 CSS DPI 为基准换算
+- 默认白底；`--transparent` 输出透明背景
+- 未指定输出路径时，PNG 写入 SVG 同目录同名文件
+- 运行环境：Node 22+，本机安装 Chrome 或 Edge；浏览器在非默认路径时用 `--browser=<path>`
 
 ---
 

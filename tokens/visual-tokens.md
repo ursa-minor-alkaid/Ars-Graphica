@@ -250,7 +250,7 @@ SVG 内所有主题敏感属性（`fill`、`stroke`、文本颜色、图形系�
 - 渐变门禁：渐变仅用于编码连续物理变量（温度、压力、浓度等），禁止用于类别区分与装饰。
 - 颜色位置：颜色放在数据标记、描边、徽章、焦点路径上；卡片、面板、节点的底色保持中性。品牌描边配中性底，禁止品牌底配品牌描边，禁止彩色卡片底。
 - 图内文本：brand-soft 底上用 brand-text，accent-soft 底上用 accent-text，语义软底上用 text。焦点数值可用 brand，其余文本用 text 或 text-muted。
-- 复刻任务的取色规则见 `guides/image-replication.md`（默认忠实取原图颜色，指令切换到本框架）。
+- 复刻任务的取色规则见 `references/image-replication.md`（默认忠实取原图颜色，指令切换到本框架）。
 
 ## 非颜色 Token
 
