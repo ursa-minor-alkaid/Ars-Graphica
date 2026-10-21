@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/ursa-minor-alkaid/Ars-Graphica@main/ars-graphica-icon.svg" alt="Ars Graphica icon" width="120">
+  <img src="https://cdn.jsdelivr.net/gh/ursa-minor-alkaid/Ars-Graphica@main/ars-graphica-icon.svg?v=2" alt="Ars Graphica icon" width="120">
 </p>
 
 <h1 align="center"><i>Ars Graphica</i><br>Precision SVG Figure Generation</h1>
