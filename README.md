@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="ars-graphica-icon.svg" alt="Ars Graphica icon" width="120">
+  <img src="https://cdn.jsdelivr.net/gh/ursa-minor-alkaid/Ars-Graphica@main/ars-graphica-icon.svg" alt="Ars Graphica icon" width="120">
 </p>
 
 <h1 align="center"><i>Ars Graphica</i><br>Precision SVG Figure Generation</h1>
@@ -16,7 +16,7 @@
 Takes a text description or an image and outputs a standalone static SVG file, using text constraints to keep text placement precise, elements aligned, and arrow directions correct; **it resolves the arbitrary misalignment of fine details that occurs in SVG flowcharts**.
 
 <p align="center">
-  <img src="ars-graphica-specimen.svg" alt="Ars Graphica specimen plate: workflow, figure types, and five color palettes" width="820">
+  <img src="https://cdn.jsdelivr.net/gh/ursa-minor-alkaid/Ars-Graphica@main/ars-graphica-specimen.svg" alt="Ars Graphica specimen plate: workflow, figure types, and five color palettes" width="820">
 </p>
 
 ## What It Does

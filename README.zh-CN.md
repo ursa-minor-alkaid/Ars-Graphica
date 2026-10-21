@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="ars-graphica-icon.svg" alt="Ars Graphica icon" width="120">
+  <img src="https://cdn.jsdelivr.net/gh/ursa-minor-alkaid/Ars-Graphica@main/ars-graphica-icon.svg" alt="Ars Graphica icon" width="120">
 </p>
 
 <h1 align="center"><i>Ars Graphica · 图艺师</i><br>精准 SVG 图形生成</h1>
@@ -12,7 +12,7 @@
 输入文字描述或图片，输出独立静态 SVG 文件，使用文字约束保证文字定位精确、元素对齐、箭头方向正确；**解决了 svg 在流程图中任意出现的细节错位情况**。
 
 <p align="center">
-  <img src="ars-graphica-specimen.svg" alt="Ars Graphica specimen plate: workflow, figure types, and five color palettes" width="820">
+  <img src="https://cdn.jsdelivr.net/gh/ursa-minor-alkaid/Ars-Graphica@main/ars-graphica-specimen.svg" alt="Ars Graphica specimen plate: workflow, figure types, and five color palettes" width="820">
 </p>
 
 ## 项目功能
