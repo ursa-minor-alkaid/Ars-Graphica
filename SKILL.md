@@ -69,7 +69,8 @@ disable-model-invocation: false
 
 硬性规则：
 
-- 独立 SVG 文件：根元素 `<svg xmlns="http://www.w3.org/2000/svg">` + `viewBox`，默认宽 960，高度按内容计算，用户指定尺寸时从其规定
+- 独立 SVG 文件：根元素 `<svg xmlns="http://www.w3.org/2000/svg">` + `viewBox`，画布由内容外接盒与四边留白反推（`W = cw + 2M`、`H = ch + 2M`，见 `references/precision-svg.md` 5.4）；默认宽 960，用户指定尺寸时从其规定
+- 四边留白同值：左 = 右 = 上 = 下 = M，M ≥ 32 且为 4 的倍数；数值写入坐标计划并逐边复算
 - 每个文件含 `<title>` 与 `<desc>` 无障碍描述
 - token 定义放在首个 `<style>` 块的 `svg {}` 选择器上
 - 静态输出：禁止 `<script>`、事件属性、CDN 引用、外部库（含 Chart.js）、HTML 页面壳
@@ -104,19 +105,20 @@ node {{SKILL_DIR}}/scripts/export-png.mjs figure.svg figure@300dpi.png --dpi=300
 1. 判定输入类型（文字描述 / 图片），选定对应工作流文件
 2. 输入清晰度检查：图片模糊或文字描述含糊到无法确定图形结构与内容时，先向用户确认，并搜索网络查找同类图形作参考，再继续；信息基本可辨时直接继续
 3. 读对应工作流文件，完成需求解析或视觉解析
-4. 按 `references/precision-svg.md` 完成坐标计划
+4. 按 `references/precision-svg.md` 完成坐标计划，含四边留白 M 与画布 W/H 的显式数值
 5. 写出 `.svg` 文件
 6. 执行 `references/precision-svg.md` 的自检清单十项，不通过则修正后再输出
 7. 用户要求 PNG 时，执行 `node {{SKILL_DIR}}/scripts/export-png.mjs <file.svg> [out.png]`，默认 3×；印刷用途改传 `--dpi=300` 或 `--width=<px>`
-8. 回复中报告：文件路径、图形类型或复刻模式、焦点或规范化处理说明；已导出 PNG 时附实际像素尺寸与倍率
+8. 回复中报告：文件路径、图形类型或复刻模式、焦点或规范化处理说明、四边留白的确认值；已导出 PNG 时附实际像素尺寸与倍率
 
 ---
 
 ## 输出前最终核对
 
 1. `references/precision-svg.md` 自检清单十项全部通过
-2. 文件可直接在浏览器打开且渲染无错
-3. 无文本溢出节点、无元素重叠、无箭头压框
-4. 颜色符合所用模式（token / 占位 / 忠实取色）
-5. 回复包含文件路径与必要的模式说明
-6. 如已导出 PNG，实际像素尺寸与倍率已核对并写入回复
+2. 四边留白同值（左 = 右 = 上 = 下 = M），M ≥ 32；按内容外接盒复算 `minX`、`W - maxX`、`minY`、`H - maxY` 四项相等
+3. 文件可直接在浏览器打开且渲染无错
+4. 无文本溢出节点、无元素重叠、无箭头压框
+5. 颜色符合所用模式（token / 占位 / 忠实取色）
+6. 回复包含文件路径、必要的模式说明与四边留白数值
+7. 如已导出 PNG，实际像素尺寸与倍率已核对并写入回复

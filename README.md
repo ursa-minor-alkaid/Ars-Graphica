@@ -64,7 +64,8 @@ node scripts/export-png.mjs figure.svg --transparent
 ### SVG Artifact
 
 - The artifact is a complete standalone `.svg` file (UTF-8), written to the given path, or to the current working directory when unspecified
-- Default canvas width is 960, with height computed from the content; explicit dimensions take precedence; the file contains `<title>` and `<desc>`
+- Default canvas width is 960, with the canvas derived from the content bounding box and uniform margins (`W = cw + 2M`, `H = ch + 2M`); explicit dimensions take precedence; the file contains `<title>` and `<desc>`
+- All four margins share one value M (≥ 32, in multiples of 4) and are recomputed edge by edge against the content bounding box before output
 - Colors always use `var(--token)`, with token declarations in the `svg {}` selector of the first `<style>` block
 - Purely static output: no `<script>`, no event attributes, no CDN references, no external libraries, no HTML page shell
 
